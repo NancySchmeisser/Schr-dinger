@@ -1,6 +1,7 @@
+body {background-image: url(https://images.eatsmarter.de/sites/default/files/styles/576x432/public/images/warenkunde-kuerbis-600x450.jpg);}
 span {color: red}
 
-#zweiter-absatz {color:red}
+#zweiter-absatz {background-color:rgba(255, 255, 255, 0.8)}
 
 .hobby {color:blue;}
 
