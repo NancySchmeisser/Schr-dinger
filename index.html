@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
-<!-- Das ist nicht meine erste Website -->
+<!-- Kommentar -->
 
 <head>
     <title>Schrödinger Website</title>
     <meta charset="utf-8" name="Nancy" content="Schrödinger" />
     <link href="style.css" rel="stylesheet" />
+    <style>
+        ::placeholder {color:red}
+    
+    </style>
 
 </head>
 
 <body>
-    <form action="forms/hallowelt.php" method="get">
-   <ul> <li><input type="text" name="name"></li>
-    <li><input type="text" name="nachname"></li>
-    <li><input type="text" name="Spitzname"></li>
-    </ul>
+    <form action="localhost:8080/forms/hallowelt.php" method="get">
+        <ul style="list-style: none">
+            <li><input type="text" name="name" placeholder="Hier dein Vorname"></li>
+            <li><input type="text" name="nachname" value="Nancy" maxlength="5"></li>
+            <li><input type="password" name="Spitzname"></li>
+            <li><input type="radio"></li>
+            <button>Sag mal Hallo!</button>
+            <button type="reset">Reset</button>
+            <button style="background: none; border: none" type="button">Button</button>
+        </ul>
     </form>
-    <a href="#unten" id="oben">Nach unten springen</a>
+    <form action="http:localhost:8080/forms/hallowelt.php" method="POST">
+        <label for="name">Wie heißt du?</label>
+        <input type="text" name="name" id="name">
+        <button>Sag mal Hallo!</button>
 
-    <img src="https://www.zooroyal.de/magazin/wp-content/uploads/2017/05/cat-2783601_1920.jpg" alt="Katze" height="100px"
-        width="130px" />
+        <label for="geschlecht_m">Männlein</label>
+        <input type="radio" name="geschlecht" value="m" id="geschlecht_m" checked>
+        <label for="geschlecht_w">Weiblein</label>
+        <input type="radio" name="geschlecht" value="w" id="geschlecht_w" />
 
-    <pre>Hallo Webwelt!
+        <input type="checkbox" name="extraschleim">
+
+
+        <a href="#unten" id="oben">Nach unten springen</a>
+
+
+
+        <pre>Hallo Webwelt!
 
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
             sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
@@ -77,29 +98,32 @@
             odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
         </pre>
 
-    <a href="links_eins.html">Zu Seite 1</a><br>
-    <a href="halloween.html">Halloween</a>
+        <img src="https://www.zooroyal.de/magazin/wp-content/uploads/2017/05/cat-2783601_1920.jpg" alt="Katze" height="100px"
+            width="130px" />
 
-    <a href="Beispiel_3_9.html">Schottlandurlaub</a>
+        <a href="links_eins.html">Zu Seite 1</a><br>
+        <a href="halloween.html">Halloween</a>
 
-    <a href="http://www.rheinwerk-verlag.de/">Rheinwerk</a>
+        <a href="Beispiel_3_9.html">Schottlandurlaub</a>
+
+        <a href="http://www.rheinwerk-verlag.de/">Rheinwerk</a>
 
 
-    <a href="#oben" id="unten">Nach oben springen</a><br>
+        <a href="#oben" id="unten">Nach oben springen</a><br>
 
-    <a href="http://www.google.com" target="_blank">Ein Link</a><br>
+        <a href="http://www.google.com" target="_blank">Ein Link</a><br>
 
-    <a href="Selektoren.html">Selektoren-Übung</a>
+        <a href="Selektoren.html">Selektoren-Übung</a>
 
-    <a href="Beispiel_4_3.html">CSS Tools</a>
+        <a href="Beispiel_4_3.html">CSS Tools</a>
 
-    <a href="Beispiel_5_1.html">ACDC</a>
+        <a href="Beispiel_5_1.html">ACDC</a>
 
-    <a href="Beispiel_5_5.html">Listen</a>
+        <a href="Beispiel_5_5.html">Listen</a>
 
-    <a href="Beispiel_5_8.html">Definitionsliste mit den Beatles</a>
+        <a href="Beispiel_5_8.html">Definitionsliste mit den Beatles</a>
 
-    <a href="Tabellen.html">Tabellen</a>
+        <a href="Tabellen.html">Tabellen</a>
 
 </body>
 
