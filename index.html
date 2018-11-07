@@ -8,6 +8,43 @@
     <link href="style.css" rel="stylesheet" />
     <style>
         ::placeholder {color:red}
+
+        #left-half {
+            width: calc(50% - 160px);
+            height: calc(100% - 160px);
+            padding: 40px;
+            margin: 40px;
+            background-color: lightblue;
+           
+        }
+
+        body {
+            padding: 0;
+             margin: 0;}
+
+        img {float: left;}
+
+        blockquote {
+            float: left;
+            border-bottom: 3px solid darkblue;
+            border-top: 3px solid darkblue;
+            padding: 10 px 20px;
+            font-variant: small-caps;
+            width: 240px;
+
+        }
+
+        #linke-spalte {margin: 0 0 0 10px;
+        position:absolute;
+        height: 100%;
+        right: 66%;
+        background-color: cyan;}
+
+        #rechte-spalte {margin: 0 10px 0 0;
+        position:absolute;
+    height: 100%;
+left: 33%;
+background-color: crimson;}
     
     </style>
 
@@ -42,16 +79,16 @@
         <p>Select Boxen</p>
         <select multiple size="5" name="zusatz[]">
             <optgroup label="The Good">
-            <option value="intelligent">intelligent</option>
-            <option value="gutaussehend">gutaussehend</option>
+                <option value="intelligent">intelligent</option>
+                <option value="gutaussehend">gutaussehend</option>
             </optgroup>
             <optgroup label="The Bad">
-            <option value="nach Käse riechend">Nach Käse riechend</option>
-            <option value="langweilig">langweilig</option>
+                <option value="nach Käse riechend">Nach Käse riechend</option>
+                <option value="langweilig">langweilig</option>
             </optgroup>
             <optgroup label="And the Creepy">
-            <option value="wohlgeformt">wohlgeformt</option>
-            <option value="schmackhaft">schmackhaft</option>
+                <option value="wohlgeformt">wohlgeformt</option>
+                <option value="schmackhaft">schmackhaft</option>
         </select>
 
 
@@ -70,37 +107,7 @@
             sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
             no sea takimata sanctus est Lorem ipsum dolor sit amet.   
 
-            <p class="tranparent">lalalaljbdkjfhksdhfkjhdskjfhkjdhfkjh</p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, 
-            vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
-             praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
-
-             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
-             dolore magna aliquyam erat, 
-             sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-             no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
-             dolore magna aliquyam erat, sed diam voluptua.
-              At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
-              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, ore magna aliquyam erat, 
-              sed diam voluptua. At vero eos et accusam et justo duo dolores 
-              et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, 
-            vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent 
-            luptatum zzril delenit augue duis dolore te 
-            feugait nulla facilisi. Lorem ipsum dolor sit amet,
-
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-             At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor 
-             sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam 
-             et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis 
-            at vero eros et accumsan et iusto odio 
-            dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
-
+            
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
             sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
@@ -141,7 +148,45 @@
 
         <a href="Beispiel_6_8.html">Stapelsuche</a>
 
-        <a href="File Upload.html">File Upload</a>
+        <a href="File Upload.html">File Upload</a><br>
+
+
+        <div id="left-half"><img src="Beispielbild.png" alt=Katze>Lorem ipsum dolor sit amet, consetetur sadipscing
+            elitr, sed diam nonumy eirmod tempor
+            invidunt ut labore
+            et dolore magna aliquyam erat,
+            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea takimata sanctus est Lorem ipsum dolor sit amet.
+            <p style="clear: left;"> ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore </p>
+            <blockquote>Die ist ein Pull Quote. Es ist lang, aber es kann umgebrochen werden. Und es hat Stil.</blockquote>
+            dolore magna aliquyam erat, sed diam voluptua.
+            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+            est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+            aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet.
+        </div>
+
+        <div id="linke-spalte">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+            takimata
+            sanctus
+            est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+            aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet.</div>
+
+        <div id="rechte-spalte">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea takimata
+            sanctus
+            est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+            aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet.</div>
+
 
 </body>
 
