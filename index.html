@@ -9,7 +9,7 @@
     <style>
         ::placeholder {color:red}
 
-        #left-half {
+        #move_me {
             width: calc(50% - 160px);
             height: calc(100% - 160px);
             padding: 40px;
@@ -27,13 +27,7 @@
             padding: 0;
              margin: 0;}
 
-        img {
-            border-image-source: url("images/rahmen.png");
-            border-image-slice: 116 65 116 65;
-            border-image-repeat: repeat;
-            border-width: 3em;
-            border-style: solid;
-            
+        
             }
 
         blockquote {
@@ -53,11 +47,36 @@
         background-color: cyan;}
 
         #rechte-spalte {margin: 0 10px 0 0;
-        
-    height: 100%;
-left: 33%;
-background-color: crimson;}
-    
+                        height: 100%;
+                        left: 33%;
+                        background-color: crimson;
+                    }
+
+    @keyframes colors {
+        from {background-color: yellow;}
+        33% {background-color: red;}
+        66% {background-color: blue;}
+        to {background-color: yellow;}
+    }
+
+      #move_me {
+                animation-name: colors;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+            }
+@keyframes move {
+    from {left: 0px;}
+    to {left: 500px;}
+}
+
+#move_me1 {position: absolute;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;}
+
+  
+
     </style>
 
 </head>
@@ -165,7 +184,7 @@ background-color: crimson;}
         <a href="galerie.html">Galerie</a>
 
 
-        <div id="left-half"><img src="Beispielbild.png" alt=Katze>Lorem ipsum dolor sit amet, consetetur sadipscing
+        <div id="move_me"><img src="Beispielbild.png" alt=Katze>Lorem ipsum dolor sit amet, consetetur sadipscing
             elitr, sed diam nonumy eirmod tempor
             invidunt ut labore
             et dolore magna aliquyam erat,
@@ -201,8 +220,8 @@ background-color: crimson;}
             aliquyam erat, sed diam voluptua. At vero eos et
             accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
             ipsum dolor sit amet.</div>
-
-
+<img id="move_me1" src="images/pinky.png" alt="Pinky">
+          
 </body>
 
 </html>
