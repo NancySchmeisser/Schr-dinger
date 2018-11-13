@@ -73,7 +73,19 @@
     animation-name: move;
     animation-duration: 10s;
     animation-direction: alternate;
-    animation-iteration-count: infinite;}
+    animation-iteration-count: infinite;
+    }
+
+    #hoverme {
+        background-color:red;
+        color: blue;
+        transition-property: background-color, color;
+        transition-duration: 5s;
+    } 
+    #hoverme:hover {
+        background-color: blue;
+        color: red;
+    }
 
   
 
@@ -221,6 +233,8 @@
             accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
             ipsum dolor sit amet.</div>
 <img id="move_me1" src="images/pinky.png" alt="Pinky">
+
+<div id="hoverme">Ich kann nichts für diese Farben, die hat mein Kumpel ausgesucht.</div>
           
 </body>
 
