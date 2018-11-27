@@ -5,7 +5,7 @@
 <head>
     <title>Schrödinger Website</title>
     <meta charset="utf-8" name="Nancy" content="Schrödinger" />
-    <link href="style.css" rel="stylesheet" />
+    
     <style>
         ::placeholder {color:red}
 
@@ -93,6 +93,29 @@
     from {background-color: #423027;}
     to {background-color: #A77F6B;}
 }
+.spalten {
+    width: 100%;
+    column-count: 4;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-width: 12em;
+    -webkit-column-width: 12em;
+    -moz-column-width: 12em;
+    column-gap: 3em;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-rule: 1px solid #00F;
+    -webkit-column-rule:  1px solid #00F;
+    -moz-column-rule:  1px solid #00F;
+    text-align: justify;
+    hyphens: auto;
+    -ms-hyphens: auto;
+    widows: 3;
+    orphans: 3;
+}
+.spalten h1 {
+    column-span: all;
+}
   
 
     </style>
@@ -140,33 +163,47 @@
                 <option value="schmackhaft">schmackhaft</option>
         </select>
         <br>
-        <a href="Entenzuchtverein.html" style="color:crimson; font-size: 50px;">Entenzuchtverein</a>
+        <a href="Entenzuchtverein.html" style="color:crimson; font-size: 50px;">Entenzuchtverein</a><br>
+        <div class="spalten">
+            <h1>Hallo Webwelt!</h1>
 
-        <pre>Hallo Webwelt!
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+            <p>accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</p>
+            <p> est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
-            <p class="hobby">accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</p> 
-            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing 
-            elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-            no sea takimata sanctus est Lorem ipsum dolor sit amet.   
 
-            
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor 
-            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et
+                dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no
+                sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore
+                et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                sanctus
+                est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et
+                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                ipsum dolor sit amet.
 
-            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-            odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
-        </pre>
+                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
+                dolore
+                eu feugiat nulla facilisis at vero eros et accumsan et iusto
+                odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                Lorem ipsum dolor sit amet,</p>
+        </div>
+
 
         <img src="https://www.zooroyal.de/magazin/wp-content/uploads/2017/05/cat-2783601_1920.jpg" alt="Katze" height="100px"
             width="130px" /><br>
@@ -238,10 +275,10 @@
             aliquyam erat, sed diam voluptua. At vero eos et
             accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
             ipsum dolor sit amet.</div><br>
-<img id="move_me1" src="images/pinky.png" alt="Pinky"><br>
+        <img id="move_me1" src="images/pinky.png" alt="Pinky"><br>
 
-<div id="coffee">Ich kann nichts für diese Farben, die hat mein Kumpel ausgesucht.</div>
-          
+        <div id="coffee">Ich kann nichts für diese Farben, die hat mein Kumpel ausgesucht.</div>
+
 </body>
 
 </html>
