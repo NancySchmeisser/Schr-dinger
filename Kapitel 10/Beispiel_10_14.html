@@ -21,7 +21,7 @@
 
 		function pruefeVornamen() {
 			var vorname = document.getElementById("vorname").value;
-			if (vorname = "")
+			if (vorname == "")
 				schreibeFehler("Bitte geben Sie einen Vornamen ein");
 			else if (vorname == "Klausie") {
 				schreibeFehler("Klausi muss draußen bleiben")
@@ -31,7 +31,7 @@
 
 		function pruefeNachnamen() {
 			var nachname = document.getElementById("nachname").value;
-			if (nachname = "")
+			if (nachname == ""){
 				schreibeFehler("Bitte geben Sie einen Nachnamen ein");
 		} else if (nachname.length <= 1) {
 			schreibeFehler("Nachname ist zu kurz");
@@ -42,7 +42,7 @@
 
 		function pruefeEmail() {
 			var email = document.getElementById("email").value;
-			if (email = "")
+			if (email == "")
 				schreibeFehler("Bitte geben Sie ihre Email-Adresse ein");
 				else if (email.indexOf("@") < 0){
 				schreibeFehler("Die Emailadresse ist falsch");
