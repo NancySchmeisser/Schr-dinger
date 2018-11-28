@@ -5,17 +5,14 @@
     <title>JavaScript</title>
     <meta charset="utf-8" />
     <script>
-        function zaehleSchuhe() {
+        function neuerEintrag() {
+            var eingabe = document.getElementById("neu");
+            var neu = eingabe.value;
+            var liste = document.getElementById("einkaufsliste");
+            var inhalt = liste.innerHTML + "<li>" + neu + "<li>";
+            liste.innerHTML = inhalt;
+            eingabe.value = "";
 
-            var regalboeden = document.getElementById("boeden").value;
-            var paareJeBoden = document.getElementById("paare-je-boden").value;
-            var paareNebenDemRegal = document.getElementById ("neben-dem-regal").value;
-            var paare = paareNebenDemRegal + paareJeBoden * regalboeden;
-            var schuhe = paare * 2;
-            document.getElementById("ausgabe").innerHTML =schuhe;
-            regalboeden = parseInt(regalboeden);
-            paareJeBoden = parseInt(paareJeBoden);
-            paareNebenDemRegal = parseInt(paareNebenDemRegal);
         }
     </script>
 
@@ -23,13 +20,10 @@
 </head>
 
 <body>
-    Regalböden: <input type="text" id="boeden" value="8"/><br>
-    Paare je Boden: <input type="text" id="paare-je-boden" value="5"/><br>
-    Neben dem Regal: <input type="text" id="neben-dem-regal" value="7"/><br>
-    Schrödingers Freundin hat <span id="ausgabe"></span> Schuhe. <br>
-    <button type="button" onclick="zaehleSchuhe();">Klick mich!</button>
-
-
+   
+<ul id="einkaufsliste"></ul>
+<input type="text" id="neu">
+<button type="button" onclick="neuerEintrag();">Klick mich!</button>
 
     
 </body>
