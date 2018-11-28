@@ -5,14 +5,14 @@
     <title>JavaScript</title>
     <meta charset="utf-8" />
     <script>
-        function testeFehler() {
+        function zaehleSchuhe() {
 
-            var regalboeden = 8;
-            var paareJeBoden = 5;
-            var paareNebenDemRegal = 7;
+            var regalboeden = document.getElementById("boeden").value;
+            var paareJeBoden = document.getElementById("paare-je-boden").value;
+            var paareNebenDemRegal = document.getElementById ("neben-dem-regal").value;
             var paare = paareNebenDemRegal + paareJeBoden * regalboeden;
             var schuhe = paare * 2;
-            var element = document.getElementById("test").innerHTML = "Hallo Welt!";
+            document.getElementById("ausgabe").innerHTML =schuhe;
         }
     </script>
 
@@ -20,12 +20,13 @@
 </head>
 
 <body>
-    Schrödingers Freundin hat <span id="null"></span> Schuhe. <br />
-    <!--Mit dem Attribut onclick wird diesem Knopf ein Eventhandler zugewiesen: wird er angeklickt wird die Funktion zaehleSchuhe aufgerufen. -->
+    Regalböden: <input type="text" id="boeden" value="8"/><br>
+    Paare je Boden: <input type="text" id="paare-je-boden" value="5"/><br>
+    Neben dem Regal: <input type="text" id="neben-dem-regal" value="7"/><br>
+    Schrödingers Freundin hat <span id="ausgabe"></span> Schuhe. <br>
     <button type="button" onclick="zaehleSchuhe();">Klick mich!</button>
-    <noscript>
-        JavaScript ist nicht aktiv!
-    </noscript>
+
+
 
     
 </body>
