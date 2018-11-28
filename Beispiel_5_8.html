@@ -5,14 +5,17 @@
     <title>JavaScript</title>
     <meta charset="utf-8" />
     <script>
-        function neuerEintrag() {
-            var eingabe = document.getElementById("neu");
-            var neu = eingabe.value;
-            var liste = document.getElementById("einkaufsliste");
-            var inhalt = liste.innerHTML + "<li>" + neu + "<li>";
-            liste.innerHTML = inhalt;
-            eingabe.value = "";
-
+        function rechne() {
+            /*Als Erstes liest du die Rechnung aus dem Eingabefeld*/
+            var aufgabe = document.getElementById("rechnung").value;
+            /*Dann findest du heraus, wo das Pluszeichen steht*/
+            var plusPosition = aufgabe.indexOf("+");
+            /*Der erste Summand findet sich in aufgabe von Stelle 0 bis zum Pluszeichen*/
+            var summand1 = parseInt(aufgabe.substring(0, plusPosition));
+            /*Der zweite Summand beginnt nach dem Pluszeichen und reicht bis zum Ende, deshalb wird der zweite Parameter für substring nicht benötigt*/
+            var summand2 = parseInt(aufgabe.substring(plusPosition + 1));
+            /*Rechnen, ausgeben, fertig*/
+            document.getElementById("ergebnis").innerHTML = summand1 + summand2;
         }
     </script>
 
@@ -21,9 +24,12 @@
 
 <body>
    
-<ul id="einkaufsliste"></ul>
-<input type="text" id="neu">
-<button type="button" onclick="neuerEintrag();">Klick mich!</button>
+    <h3>Rechnen</h3>
+    <input type="text" id="rechnung"/> = <span id="ergebnis"></span><br/>
+    <button type="button" onclick="rechne();">Klick mich!</button>
+    <noscript>
+        JavaScript ist nicht aktiv!
+    </noscript>
 
     
 </body>
