@@ -13,17 +13,29 @@
 
         function berechne() {
             var zahl = document.getElementById("zahl").value;
-            document.getElementById("ergebnis").innerHTML = quersumme(zahl);
-                    }
-        window.addEventListener("load", function(){
+            /*Innerhalb vom try-Block wird Code ausgeführt, der einen Fehler werfen könnte.*/
+            try {
+                document.getElementById("ergebnis").innerHTML = quersumme(zahl);
+            } catch (error) {
+                /*Wenn ein Fehler auftritt, und nur dann, wird der Code im catch-Block ausgeführt*/
+                document.getElementById("ergebnis").innerHTML = "Fehler: " + error;
+            }
+        }
+        window.addEventListener("load", function () {
             document.getElementById("berechne").addEventListener("click", berechne);
-        )}
+        });
 
     </script>
 </head>
 
 <body>
+        <h1>Quersumme berechnen</h1>
+Quersumme von <input id="zahl" type="text">: <span id="ergebnis"></span><br>
+<button type="button" id="berechne">Berechne</button>
 
+<noscript>
+    JavaScript ist nicht aktiv!
+</noscript>
    
     <br>
     <a href="links_zwei.html">Zu Seite 2</a><br>
