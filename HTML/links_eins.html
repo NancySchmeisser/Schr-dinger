@@ -4,35 +4,68 @@
 <head>
     <title>links.eins</title>
     <script>
-        function quersumme(zahl) {
-            zahl = zahl.toString();
-            if (zahl.length != 2) throw "Nur zweistellige Zahlen erlaubt";
-            var ergebnis = parseInt(zahl.charAt(0)) + parseInt(zahl.charAt(1));
+
+        test();
+
+        function test(){
+           var testArray = [ 1,2,3,4,5,6,7 ];
+
+           var gerade = function(wert) {
+               return wert % 2 == 0;
+           }
+
+           var kleiner4 = function(wert) {
+               if (wert < 4) {
+                   return true;
+               } else {
+                   return false;
+               }
+           }
+
+
+           var geradezahlen = filterarray(testArray, gerade); // Ergebnis = [ 2, 4, 6]
+           var kleiner4zahlen = filterarray(testArray, kleiner4); // Ergebnis = [ 1, 2, 3]
+
+           console.log("Gerade Zahlen: " + geradezahlen);
+           console.log("Kleiner 4: " + kleiner4zahlen);
+           console.log("Größer 4: " + filterarray(testArray, wert => wert > 4));
+           console.log("Mal 2: " + maparray( testArray, wert => wert * 2 ));
+
+           console.log("Größer 4 / 2: " + testArray.filter( wert => wert >4 ));
+           console.log("Mal 2 / 2: " + testArray.map( wert => wert * 2 ));
+
+        }
+
+
+        function filterarray(array, filterFn) {
+
+            var ergebnis = [];
+            for (var i = 0; i < array.length; i++){
+                if(filterFn(array[i])){
+
+                    ergebnis.push(array[i]);
+
+                }
+            }
             return ergebnis;
         }
 
-        function berechne() {
-            var zahl = document.getElementById("zahl").value;
-            /*Innerhalb vom try-Block wird Code ausgeführt, der einen Fehler werfen könnte.*/
-            try {
-                document.getElementById("ergebnis").innerHTML = quersumme(zahl);
-            } catch (error) {
-                /*Wenn ein Fehler auftritt, und nur dann, wird der Code im catch-Block ausgeführt*/
-                document.getElementById("ergebnis").innerHTML = "Fehler: " + error;
+         function maparray(array, mappingFn) {
+
+            var ergebnis = [];
+            for (var i = 0; i < array.length; i++){
+               
+                ergebnis.push( mappingFn(array[i]) );
+
             }
-        }
-        window.addEventListener("load", function () {
-            document.getElementById("berechne").addEventListener("click", berechne);
-        });
+            return ergebnis;
+            }
 
     </script>
 </head>
 
 <body>
-        <h1>Quersumme berechnen</h1>
-Quersumme von <input id="zahl" type="text">: <span id="ergebnis"></span><br>
-<button type="button" id="berechne">Berechne</button>
-
+        
 <noscript>
     JavaScript ist nicht aktiv!
 </noscript>
