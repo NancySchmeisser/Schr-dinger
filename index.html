@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<!-- Kommentar -->
+
+<head>
+    <title>Schrödinger Website</title>
+    <meta charset="utf-8" name="Nancy" content="Schrödinger" />
+    
+    <style>
+        ::placeholder {color:red}
+
+        #move_me {
+            width: calc(50% - 160px);
+            height: calc(100% - 160px);
+            padding: 40px;
+            margin: 40px;
+            background-color: lightblue;
+            border-radius: 20px;
+            border-left: 10px solid blue;
+            border-top: 5px solid black;
+            border-right: 5px dotted black;
+            border-bottom: 5px solid red;
+            box-shadow: 10px 10px 5px #AAAACC;
+        }
+
+        body {
+            padding: 0;
+             margin: 0;}
+
+        
+            }
+
+        blockquote {
+            float: left;
+            border-bottom: 3px solid darkblue;
+            border-top: 3px solid darkblue;
+            padding: 10 px 20px;
+            font-variant: small-caps;
+            width: 240px;
+
+        }
+
+        #linke-spalte {margin: 0 0 0 10px;
+        
+        height: 100%;
+        right: 66%;
+        background-color: cyan;}
+
+        #rechte-spalte {margin: 0 10px 0 0;
+                        height: 100%;
+                        left: 33%;
+                        background-color: crimson;
+                    }
+
+    @keyframes colors {
+        from {background-color: yellow;}
+        33% {background-color: red;}
+        66% {background-color: blue;}
+        to {background-color: yellow;}
+    }
+
+      #move_me {
+                animation-name: colors;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+            }
+@keyframes move {
+    from {left: 0px;}
+    to {left: 500px;}
+}
+
+#move_me1:hover {position: absolute;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    }
+
+    #coffee {
+        width:200px;
+        height:200px;
+        animation-name: coffee;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-play-state: paused;
+    }
+
+    #coffee:hover {
+        animation-play-state: running;
+    }
+@keyframes coffee {
+    from {background-color: #423027;}
+    to {background-color: #A77F6B;}
+}
+.spalten {
+    width: 100%;
+    column-count: 4;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-width: 12em;
+    -webkit-column-width: 12em;
+    -moz-column-width: 12em;
+    column-gap: 3em;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-rule: 1px solid #00F;
+    -webkit-column-rule:  1px solid #00F;
+    -moz-column-rule:  1px solid #00F;
+    text-align: justify;
+    hyphens: auto;
+    -ms-hyphens: auto;
+    widows: 3;
+    orphans: 3;
+}
+.spalten h1 {
+    column-span: all;
+}
+  
+
+    </style>
+
+</head>
+
+<body>
+    <form action="localhost:8080/forms/hallowelt.php" method="get">
+        <ul style="list-style: none">
+            <li><input type="text" name="name" placeholder="Hier dein Vorname"></li>
+            <li><input type="text" name="nachname" value="Nancy" maxlength="5"></li>
+            <li><input type="password" name="Spitzname"></li>
+            <li><input type="radio"></li>
+            <button>Sag mal Hallo!</button>
+            <button type="reset">Reset</button>
+            <button style="background: none; border: none" type="button">Button</button>
+        </ul>
+    </form>
+    <form action="http:localhost:8080/forms/hallowelt.php" method="POST">
+        <label for="name">Wie heißt du?</label>
+        <input type="text" name="name" id="name">
+        <button>Sag mal Hallo!</button>
+
+        <label for="geschlecht_m">Männlein</label>
+        <input type="radio" name="geschlecht" value="m" id="geschlecht_m" checked>
+        <label for="geschlecht_w">Weiblein</label>
+        <input type="radio" name="geschlecht" value="w" id="geschlecht_w" />
+
+        <input type="checkbox" name="extraschleim">
+
+
+        <a href="#unten" id="oben">Nach unten springen</a><br>
+        <p>Select Boxen</p>
+        <select multiple size="5" name="zusatz[]">
+            <optgroup label="The Good">
+                <option value="intelligent">intelligent</option>
+                <option value="gutaussehend">gutaussehend</option>
+            </optgroup>
+            <optgroup label="The Bad">
+                <option value="nach Käse riechend">Nach Käse riechend</option>
+                <option value="langweilig">langweilig</option>
+            </optgroup>
+            <optgroup label="And the Creepy">
+                <option value="wohlgeformt">wohlgeformt</option>
+                <option value="schmackhaft">schmackhaft</option>
+        </select>
+        <br>
+        <a href="Ente.html" style="color:crimson; font-size: 50px;">Entenzuchtverein</a><br>
+        <div class="spalten">
+            <h1>Hallo Webwelt!</h1>
+
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et</p>
+            <p>accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata</p>
+            <p> est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et
+                dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no
+                sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore
+                et dolore magna aliquyam erat, sed diam voluptua.
+                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                sanctus
+                est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+                sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et
+                accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                ipsum dolor sit amet.
+
+                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
+                dolore
+                eu feugiat nulla facilisis at vero eros et accumsan et iusto
+                odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                Lorem ipsum dolor sit amet,</p>
+        </div>
+
+
+        <img src="https://www.zooroyal.de/magazin/wp-content/uploads/2017/05/cat-2783601_1920.jpg" alt="Katze" height="100px"
+            width="130px" /><br>
+
+        <a href="HTML/links_eins.html">Zu Seite 1</a><br>
+        <a href="halloween.html">Halloween</a>
+
+        <a href="Beispiel_3_9.html">Schottlandurlaub</a>
+
+        <a href="http://www.rheinwerk-verlag.de/">Rheinwerk</a>
+
+
+        <a href="#oben" id="unten">Nach oben springen</a><br>
+
+        <a href="http://www.google.com" target="_blank">Ein Link</a><br>
+
+        <a href="Selektoren.html">Selektoren-Übung</a>
+
+        <a href="Beispiel_4_3.html">CSS Tools</a>
+
+        <a href="Beispiel_5_1.html">DIV Container</a>
+
+        <a href="Beispiel_5_5.html">Listen</a>
+
+        <a href="Beispiel_5_8.html">JavaScript</a>
+
+        <a href="Tabellen.html">Tabellen</a>
+
+        <a href="Beispiel_6_8.html">Stapelsuche</a>
+
+        <a href="File Upload.html">File Upload</a><br>
+
+        <a href="galerie.html">Galerie</a>
+
+        <a href="Kapitel 10/Beispiel_10_15.html">Kapitel Zehn/ Formulare</a>
+
+        <a href="Kapitel 10/Beispiel_10_12.html">Zähle Schuhe</a>
+
+
+        <div id="move_me"><img src="Beispielbild.png" alt=Katze>Lorem ipsum dolor sit amet, consetetur sadipscing
+            elitr, sed diam nonumy eirmod tempor
+            invidunt ut labore
+            et dolore magna aliquyam erat,
+            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea takimata sanctus est Lorem ipsum dolor sit amet.
+            <p style="clear: left;"> ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore </p>
+            <blockquote>Die ist ein Pull Quote. Es ist lang, aber es kann umgebrochen werden. Und es hat Stil.</blockquote>
+            dolore magna aliquyam erat, sed diam voluptua.
+            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+            est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+            aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet.
+        </div>
+
+        <div id="linke-spalte">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea
+            takimata
+            sanctus
+            est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+            aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet.</div>
+
+        <div id="rechte-spalte">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea takimata
+            sanctus
+            est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+            aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+            ipsum dolor sit amet.</div><br>
+        <img id="move_me1" src="images/pinky.png" alt="Pinky"><br>
+
+        
+
+</body>
+
+</html>

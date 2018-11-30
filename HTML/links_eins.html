@@ -3,36 +3,27 @@
 
 <head>
     <title>links.eins</title>
-
-    
-        <script>
-            /*Diese Funktion findet in einem Array von Zahlen die größte */
-            function findeMaximum(array) {
-                var max;
-                if (array && array.length > 0) {
-                    /*Die Schleife läuft durch alle Werte im Array*/
-                    for (var i = 0; i < array.length; i++) {
-                        /*Wenn es noch kein Maximum gibt, oder diese Zahl größer ist als das aktuelle Maximum, wird die Zahl zum neuen Maximum.*/
-                        if (!max || array[i] > max) {
-                            max = array[i];
-                        }
-                    }
-                }
-                /*Mit return wird das Maximum zurückgegeben*/
-                return max;
-            }
-        </script>
-    </head>
-    
-    <body>
-    Das Maximum von 3, 7, -1, 5, 13, -12, -167, 4, 19, 3.1:
     <script>
-        document.write(findeMaximum([3, 7, -1, 5, 13, -12, -167, 4, 19, 3.1]));
+        function quersumme(zahl) {
+            zahl = zahl.toString();
+            if (zahl.length != 2) throw "Nur zweistellige Zahlen erlaubt";
+            var ergebnis = parseInt(zahl.charAt(0)) + parseInt(zahl.charAt(1));
+            return ergebnis;
+        }
+
+        function berechne() {
+            var zahl = document.getElementById("zahl").value;
+            document.getElementById("ergebnis").innerHTML = quersumme(zahl);
+                    }
+        window.addEventListener("load", function(){
+            document.getElementById("berechne").addEventListener("click", berechne);
+        )}
+
     </script>
-    
-    <noscript>
-        JavaScript ist nicht aktiv!
-    </noscript>
+</head>
+
+<body>
+
    
     <br>
     <a href="links_zwei.html">Zu Seite 2</a><br>
