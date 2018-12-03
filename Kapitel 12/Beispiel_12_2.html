@@ -1,32 +1,33 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>USS Schrödinger - Sicherheit durch Startknopf</title>
     <script>
-        window.addEventListener("load", setup);
-        function setup() {
-            document.getElementById("start").addEventListener("click", abflug);
-        }
-
-        /*Allen Eventhandlern wird als erster Parameter ein Event-Objekt übergeben, dass mehr Informationen enthält, was überhaupt passiert ist. */
         function abflug(event) {
-            /*Nur wenn die STRG-Taste gedrückt ist, startet das Schiff.*/
-            if (event.ctrlKey) {
+            if (event.crtlKey) {
                 alert("Konstruktion nicht abgeschlossen");
-            } else {
-                alert("Falscher Startcode! Das Sicherheitsteam ist auf dem Weg!");
             }
-        }
+            else {
+                alert("Falscher Startcode! Das Sicherheitsteam ist auf dem Weg!");
+}
+        function setup() {
+                    document.getElementById("startknopf").addEventListener("click", event);
+                }
+            }
+        
+        window.addEventListener("load", setup);
     </script>
 </head>
 
 <body>
-<h1>USS Schrödinger</h1>
-<button type="button" id="start">Bis zur Unendlichkeit!</button>
+    <h1>USS Schrödinger</h1>
+    <button id="startknopf">Startknopf</button>
 
-<noscript>
-    JavaScript ist nicht aktiv!
-</noscript>
+    <noscript>
+        JavaScript ist nicht aktiv!
+    </noscript>
 </body>
+
 </html>
