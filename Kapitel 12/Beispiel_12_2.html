@@ -6,18 +6,18 @@
     <title>USS Schrödinger - Sicherheit durch Startknopf</title>
     <script>
         function abflug(event) {
-            if (event.crtlKey) {
+            if (event.ctrlKey) {
                 alert("Konstruktion nicht abgeschlossen");
             }
             else {
                 alert("Falscher Startcode! Das Sicherheitsteam ist auf dem Weg!");
-}
-}
-        function setup (){
-                    document.getElementById("startknopf").addEventListener("click", abflug);
-                }
-            
-        
+            }
+        }
+        function setup() {
+            document.getElementById("startknopf").addEventListener("click", abflug);
+        }
+
+
         window.addEventListener("load", setup);
     </script>
 </head>
