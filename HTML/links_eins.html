@@ -4,68 +4,31 @@
 <head>
     <title>links.eins</title>
     <script>
-
-        test();
-
-        function test(){
-           var testArray = [ 1,2,3,4,5,6,7 ];
-
-           var gerade = function(wert) {
-               return wert % 2 == 0;
-           }
-
-           var kleiner4 = function(wert) {
-               if (wert < 4) {
-                   return true;
-               } else {
-                   return false;
-               }
-           }
-
-
-           var geradezahlen = filterarray(testArray, gerade); // Ergebnis = [ 2, 4, 6]
-           var kleiner4zahlen = filterarray(testArray, kleiner4); // Ergebnis = [ 1, 2, 3]
-
-           console.log("Gerade Zahlen: " + geradezahlen);
-           console.log("Kleiner 4: " + kleiner4zahlen);
-           console.log("Größer 4: " + filterarray(testArray, wert => wert > 4));
-           console.log("Mal 2: " + maparray( testArray, wert => wert * 2 ));
-
-           console.log("Größer 4 / 2: " + testArray.filter( wert => wert >4 ));
-           console.log("Mal 2 / 2: " + testArray.map( wert => wert * 2 ));
-
-        }
-
-
-        function filterarray(array, filterFn) {
-
-            var ergebnis = [];
-            for (var i = 0; i < array.length; i++){
-                if(filterFn(array[i])){
-
-                    ergebnis.push(array[i]);
-
-                }
-            }
-            return ergebnis;
-        }
-
-         function maparray(array, mappingFn) {
-
-            var ergebnis = [];
-            for (var i = 0; i < array.length; i++){
-               
-                ergebnis.push( mappingFn(array[i]) );
-
-            }
-            return ergebnis;
-            }
-
+var mouseoverZaehler = 0;
+function zaehle(event) {
+    mouseoverZaehler++;
+    target.innerHTML = mouseoverZaehler;
+}
+       
     </script>
+     <style>
+        div {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
-        
+    <h1>Der Hoverzähler</h1>
+
+    <div id="zaehler1">0</div>
+    <div id="zaehler2">0</div>
+    <div id="zaehler3">0</div>
+    <div id="zaehler4">0</div>
+    <div id="zaehler5">0</div>
 <noscript>
     JavaScript ist nicht aktiv!
 </noscript>
