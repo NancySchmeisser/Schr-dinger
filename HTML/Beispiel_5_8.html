@@ -11,27 +11,28 @@
             document.getElementById("clientX").innerHTML = event.clientX;
             document.getElementById("clientY").innerHTML = event.clientY;
         }
-function taste(event){
-    document.getElementById("taste").innerHTML = event.keyCode;
-}
-function setup(){
-    window.addEventListener("mousemove", bewegt);
-    window.addEventListener("keyup", taste);
-}
-window.addEventListener("load", setup);
+        function taste(event) {
+            document.getElementById("taste").innerHTML = event.keyCode;
+        }
+        function setup() {
+            window.addEventListener("mousemove", bewegt);
+            window.addEventListener("keyup", taste);
+        }
+        window.addEventListener("load", setup);
     </script>
 
-    
+
 </head>
 
 <body>
-   
-  
+<div id="screenX"></div>
+<div id="screenY"></div>
+
     <noscript>
         JavaScript ist nicht aktiv!
     </noscript>
 
-    
+
 </body>
 
 </html>
