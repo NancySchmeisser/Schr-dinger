@@ -5,18 +5,20 @@
     <title>JavaScript</title>
     <meta charset="utf-8" />
     <script>
-        function rechne() {
-            /*Als Erstes liest du die Rechnung aus dem Eingabefeld*/
-            var aufgabe = document.getElementById("rechnung").value;
-            /*Dann findest du heraus, wo das Pluszeichen steht*/
-            var plusPosition = aufgabe.indexOf("+");
-            /*Der erste Summand findet sich in aufgabe von Stelle 0 bis zum Pluszeichen*/
-            var summand1 = parseInt(aufgabe.substring(0, plusPosition));
-            /*Der zweite Summand beginnt nach dem Pluszeichen und reicht bis zum Ende, deshalb wird der zweite Parameter für substring nicht benötigt*/
-            var summand2 = parseInt(aufgabe.substring(plusPosition + 1));
-            /*Rechnen, ausgeben, fertig*/
-            document.getElementById("ergebnis").innerHTML = summand1 + summand2;
+        function bewegt(event) {
+            document.getElementById("screenX").innerHTML = event.screenX;
+            document.getElementById("screenY").innerHTML = event.screenY;
+            document.getElementById("clientX").innerHTML = event.clientX;
+            document.getElementById("clientY").innerHTML = event.clientY;
         }
+function taste(event){
+    document.getElementById("taste").innerHTML = event.keyCode;
+}
+function setup(){
+    window.addEventListener("mousemove", bewegt);
+    window.addEventListener("keyup", taste);
+}
+window.addEventListener("load", setup);
     </script>
 
     
@@ -24,9 +26,7 @@
 
 <body>
    
-    <h3>Rechnen</h3>
-    <input type="text" id="rechnung"/> = <span id="ergebnis"></span><br/>
-    <button type="button" onclick="rechne();">Klick mich!</button>
+  
     <noscript>
         JavaScript ist nicht aktiv!
     </noscript>
