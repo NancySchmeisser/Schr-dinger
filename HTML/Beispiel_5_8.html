@@ -4,6 +4,19 @@
 <head>
     <title>Zauberlehrling</title>
     <meta charset="utf-8" />
+    <style>
+        .offen {
+            text-decoration: underline;
+            }
+
+        .erledigt {
+            text-decoration: line-through;
+            }
+        a {
+            cursor: pointer;
+            color: blue;
+        }
+    </style>
     <script>
         function setup() {
 
@@ -11,12 +24,14 @@
         }
 
         function erledigeErsteOffeneAufgabe() {
-            var offene = document.getElementById("aufgaben").getElementsByClassName("offen");
-            if (offene.length > 0) {
-                var el = offene [0];
-                el.classlist.remove("offen");
-                el.classlist.add("erledigt");
+            var links = document.getElementById("aufgaben").getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener("click", erledigeAufgabeDirekt);
             }
+        }
+        function erledigeAufgabeDirekt(event) {
+            erledigeAufgabe(event.target.parentElement);
+            event.preventDefault();
         }
         window.addEventListener("load", setup);
     </script>
@@ -28,12 +43,12 @@
 
     <ul id="aufgaben">
 
-        <li class="offen">Zauberbücher lesen</li>
-        <li class="offen">Tabellenzauber üben</li>
-        <li class="offen">Des Meisters Schuhe putzen</li>
-        <li class="offen">Wasser schleppen</li>
-        <li class="offen">Kaffee kochen</li>
-        <li class="offen">Den Boden wischen</li>
+        <li class="offen">Zauberbücher lesen<a>Erledigt</a></li>
+        <li class="offen">Tabellenzauber üben<a>Erledigt</a></li>
+        <li class="offen">Des Meisters Schuhe putzen<a>Erledigt</a></li>
+        <li class="offen">Wasser schleppen<a>Erledigt</a></li>
+        <li class="offen">Kaffee kochen<a>Erledigt</a></li>
+        <li class="offen">Den Boden wischen<a>Erledigt</a></li>
 
     </ul>
     <button type="button" id="erledigen">Erledigt</button>
