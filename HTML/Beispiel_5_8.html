@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 
 <head>
-    <title>JavaScript</title>
+    <title>Zauberlehrling</title>
     <meta charset="utf-8" />
-    <script>
-        function bewegt(event) {
-            document.getElementById("screenX").innerHTML = event.screenX;
-            document.getElementById("screenY").innerHTML = event.screenY;
-            document.getElementById("clientX").innerHTML = event.clientX;
-            document.getElementById("clientY").innerHTML = event.clientY;
-        }
-        function taste(event) {
-            document.getElementById("taste").innerHTML = event.keyCode;
-        }
-        function setup() {
-            window.addEventListener("mousemove", bewegt);
-            window.addEventListener("keyup", taste);
-        }
-        window.addEventListener("load", setup);
-    </script>
-
+   
 
 </head>
 
 <body>
-<div id="screenX"></div>
-<div id="screenY"></div>
+    <h1>Aufgaben für den Zauberlehrling</h1>
 
-    <noscript>
-        JavaScript ist nicht aktiv!
-    </noscript>
+    <ul id="aufgaben">
 
+        <li class="offen">Zauberbücher lesen</li>
+        <li class="offen">Tabellenzauber üben</li>
+        <li class="offen">Des Meisters Schuhe putzen</li>
+        <li class="offen">Wasser schleppen</li>
+        <li class="offen">Kaffee kochen</li>
+        <li class="offen">Den Boden wischen</li>
+
+    </ul>
+    <button type="button" id="erledigen">Erledigt</button>
+   
 
 </body>
 
