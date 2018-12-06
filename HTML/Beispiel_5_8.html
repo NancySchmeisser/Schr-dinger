@@ -21,6 +21,7 @@
         window.addEventListener("load", setup);
 
         function setup() {
+            document.getElementById("umgedreht").addEventListener("click", umdrehen);
             document.getElementById("erledigt").addEventListener("click", erledigeErsteOffeneAufgabe);
             document.getElementById("alles-erledigt").addEventListener("click", erledigeAlle);
             /*Mit getElementsByTagName werden alle a-Tags in der Aufgabenliste gefunden und dann mit click-Handlern ausgestattet.*/
@@ -62,6 +63,17 @@
                 aufgabe.className = "erledigt";
             }
         }
+        function umdrehen() {
+            var liste = document.getElementById("aufgaben");
+            var kinder = [];
+            while(liste.firstChild){
+                kinder.push(liste.removeChild(liste.firstChild));
+
+            }
+            while (kinder.length) {
+                liste.appendChild(kinder.pop());
+            }
+        }
     </script>
 </head>
 
@@ -77,5 +89,6 @@
 </ul>
 <button type="button" id="erledigt">Erledigt</button>
 <button type="button" id="alles-erledigt">Alles erledigt!</button>
+<button type="button" id="umgedreht">Umdrehen</button>
 </body>
 </html>
