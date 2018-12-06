@@ -4,7 +4,20 @@
 <head>
     <title>Zauberlehrling</title>
     <meta charset="utf-8" />
-   
+    <script>
+        function setup() {
+
+            document.getElementById("erledigen").addEventListener("click", erledigeErsteOffeneAufgabe);
+        }
+
+        function erledigeErsteOffeneAufgabe() {
+            var offene = document.getElementById("aufgaben"). getElementsByClassName ("offen");
+            if (offene.length > 0) {
+                offene[0].className = "erledigt";
+            }
+        }
+        window.addEventListener("load", setup);
+    </script>
 
 </head>
 
@@ -13,7 +26,7 @@
 
     <ul id="aufgaben">
 
-        <li class="offen">Zauberbücher lesen</li>
+        <li class="erledigt">Zauberbücher lesen</li>
         <li class="offen">Tabellenzauber üben</li>
         <li class="offen">Des Meisters Schuhe putzen</li>
         <li class="offen">Wasser schleppen</li>
@@ -22,7 +35,7 @@
 
     </ul>
     <button type="button" id="erledigen">Erledigt</button>
-   
+
 
 </body>
 
