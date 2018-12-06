@@ -11,9 +11,11 @@
         }
 
         function erledigeErsteOffeneAufgabe() {
-            var offene = document.getElementById("aufgaben"). getElementsByClassName ("offen");
+            var offene = document.getElementById("aufgaben").getElementsByClassName("offen");
             if (offene.length > 0) {
-                offene[0].className = "erledigt";
+                var el = offene [0];
+                el.classlist.remove("offen");
+                el.classlist.add("erledigt");
             }
         }
         window.addEventListener("load", setup);
@@ -26,7 +28,7 @@
 
     <ul id="aufgaben">
 
-        <li class="erledigt">Zauberbücher lesen</li>
+        <li class="offen">Zauberbücher lesen</li>
         <li class="offen">Tabellenzauber üben</li>
         <li class="offen">Des Meisters Schuhe putzen</li>
         <li class="offen">Wasser schleppen</li>
