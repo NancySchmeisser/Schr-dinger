@@ -22,6 +22,7 @@
         window.addEventListener("load", setup);
 
         function setup() {
+            document.getElementById("hinzufuegen").addEventListener("click", hinzufuegen);
             document.getElementById("umgedreht").addEventListener("click", umdrehen);
             document.getElementById("erledigt").addEventListener("click", erledigeErsteOffeneAufgabe);
             document.getElementById("alles-erledigt").addEventListener("click", erledigeAlle);
@@ -78,7 +79,7 @@
 
         function hinzufuegen() {
             var neuerText = document.getElementById("neue-aufgabe").value;
-            if (neuerText.length > 0) {
+            if (neuerText.trim().length > 0) {
                 var neuesElement = document.createElement("li");
                 var neueTextNode = document.createTextNode(neuerText);
                 neuesElement.appendChild(neueTextNode);
@@ -102,9 +103,11 @@
     </ul>
     <button type="button" id="erledigt">Erledigt</button>
     <button type="button" id="alles-erledigt">Alles erledigt!</button>
-    <button type="button" id="umgedreht">Umdrehen</button>
-    <button type="button" id="neue-aufgabe">Neue Aufgabe</button>
-    <input type="text" id="neue-aufgabe" name="neue-aufgabe">
+    <button type="button" id="umgedreht">Umdrehen</button><br>
+
+    <input type="text" id="neue-aufgabe">
+    <button type="button" id="hinzufuegen">Neue Aufgabe</button>
+    
 
 
 </body>
