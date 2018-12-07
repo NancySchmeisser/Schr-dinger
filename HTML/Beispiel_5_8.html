@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Aufgaben für den Zauberlehrling</title>
     <style>
         .offen {
@@ -66,7 +67,7 @@
         function umdrehen() {
             var liste = document.getElementById("aufgaben");
             var kinder = [];
-            while(liste.firstChild){
+            while (liste.firstChild) {
                 kinder.push(liste.removeChild(liste.firstChild));
 
             }
@@ -74,21 +75,38 @@
                 liste.appendChild(kinder.pop());
             }
         }
+
+        function hinzufuegen() {
+            var neuerText = document.getElementById("neue-aufgabe").value;
+            if (neuerText.length > 0) {
+                var neuesElement = document.createElement("li");
+                var neueTextNode = document.createTextNode(neuerText);
+                neuesElement.appendChild(neueTextNode);
+                neuesElement.classList.add("offen");
+                document.getElementById("aufgaben").appendChild(neuesElement);
+                document.getElementById("neue-aufgabe").value = "";
+            }
+        }
     </script>
 </head>
 
 <body>
-<h1>Aufgaben für den Zauberlehrling</h1>
-<ul id="aufgaben">
-    <li class="offen">Zauberbücher lesen <a>Erledigt</a></li>
-    <li class="offen">Tabellenzauber üben <a>Erledigt</a></li>
-    <li class="offen">Des Meisters Schuhe putzen <a>Erledigt</a></li>
-    <li class="offen">Wasser schleppen <a>Erledigt</a></li>
-    <li class="offen">Den Boden wischen <a>Erledigt</a></li>
-    <li class="offen">Kaffee kochen <a>Erledigt</a></li>
-</ul>
-<button type="button" id="erledigt">Erledigt</button>
-<button type="button" id="alles-erledigt">Alles erledigt!</button>
-<button type="button" id="umgedreht">Umdrehen</button>
+    <h1>Aufgaben für den Zauberlehrling</h1>
+    <ul id="aufgaben">
+        <li class="offen">Zauberbücher lesen <a>Erledigt</a></li>
+        <li class="offen">Tabellenzauber üben <a>Erledigt</a></li>
+        <li class="offen">Des Meisters Schuhe putzen <a>Erledigt</a></li>
+        <li class="offen">Wasser schleppen <a>Erledigt</a></li>
+        <li class="offen">Den Boden wischen <a>Erledigt</a></li>
+        <li class="offen">Kaffee kochen <a>Erledigt</a></li>
+    </ul>
+    <button type="button" id="erledigt">Erledigt</button>
+    <button type="button" id="alles-erledigt">Alles erledigt!</button>
+    <button type="button" id="umgedreht">Umdrehen</button>
+    <button type="button" id="neue-aufgabe">Neue Aufgabe</button>
+    <input type="text" id="neue-aufgabe" name="neue-aufgabe">
+
+
 </body>
+
 </html>
