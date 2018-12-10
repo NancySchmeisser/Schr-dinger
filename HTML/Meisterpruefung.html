@@ -4,16 +4,26 @@
 <head>
     <title>Meisterprüfung</title>
     <style>
-       
-    </style>
 
+    </style>
+    <script>
+        window.addEventListener("load", setup);
+        function setup(){
+            var lis = document.getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++){
+                lis(i).addEventListener("click", verschiebeAufgabe);
+            }
+        }
+        
+
+    </script>
 
 </head>
 
 <body>
     <h1>Meisterprüfung</h1>
 
-   
+
 
     <a href="HTML/index.html">Home</a>
     <a href="HTML/index.html#unten">Andere Seite unten</a>
