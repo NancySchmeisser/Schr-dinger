@@ -34,6 +34,14 @@
                 einsortieren(items.shift(), liste);
             }
         }
+        function einsortieren(item, liste){
+            var text = item.textcontent;
+            var current = liste.firstChild;
+            while (current && (current.nodeType !=Node.ELEMENT_NODE || current.textcontent < text)){
+                current = current.nextSibling;
+            }
+            liste.insertBefore (item, current);
+        }
 
     </script>
 
