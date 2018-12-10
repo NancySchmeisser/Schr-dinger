@@ -11,7 +11,7 @@
         function setup() {
             var lis = document.getElementsByTagName("li");
             for (var i = 0; i < lis.length; i++) {
-                lis(i).addEventListener("click", verschiebeAufgabe);
+                lis[i].addEventListener("click", verschiebeAufgabe);
             }
         }
         function verschiebeAufgabe(event) {
@@ -20,6 +20,18 @@
                 document.getElementById("done").appendChild(li);
             } else {
                 document.getElementById("to-do").appendChild(li)
+            }
+        }
+        function sortiereListe(liste){
+            var items = [];
+            while (liste.firstChild){
+                var el = liste.removeChild(liste.firstChild);
+                if (el.nodeType == Node.ELEMENT_NODE){
+                    items.push(el);
+                }
+            }
+            while (items.length){
+                einsortieren(items.shift(), liste);
             }
         }
 
