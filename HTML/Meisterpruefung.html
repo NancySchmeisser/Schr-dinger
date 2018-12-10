@@ -8,15 +8,15 @@
     </style>
     <script>
         window.addEventListener("load", setup);
-        function setup(){
+        function setup() {
             var lis = document.getElementsByTagName("li");
-            for (var i = 0; i < lis.length; i++){
+            for (var i = 0; i < lis.length; i++) {
                 lis(i).addEventListener("click", verschiebeAufgabe);
             }
         }
-        function verschiebeAufgabe(event){
+        function verschiebeAufgabe(event) {
             var li = event.target;
-            if (li.parentNode.id == "to-do"){
+            if (li.parentNode.id == "to-do") {
                 document.getElementById("done").appendChild(li);
             } else {
                 document.getElementById("to-do").appendChild(li)
@@ -29,6 +29,20 @@
 
 <body>
     <h1>Meisterprüfung</h1>
+
+    <h2>Noch zu tun</h2>
+<ul id="to-do">
+    <li>Zauberbücher lesen</li>
+    <li>Tabellenzauber üben</li>
+    <li>Des Meisters Schuhe putzen</li>
+    <li>Wasser schleppen</li>
+    <li>Den Boden wischen</li>
+    <li>Kaffee kochen</li>
+</ul>
+<h2>Erledigt</h2>
+<ul id="done">
+
+</ul>
 
 
 
