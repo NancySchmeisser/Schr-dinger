@@ -4,11 +4,16 @@
 <head>
     <title>Meisterprüfung</title>
     <style>
-
+        li {
+            text-decoration: underline;
+        }
     </style>
     <script>
         window.addEventListener("load", setup);
+
         function setup() {
+            sortiereListe(document.getElementById("to-do"));
+            sortiereListe(document.getElementById("done"));
             var lis = document.getElementsByTagName("li");
             for (var i = 0; i < lis.length; i++) {
                 lis[i].addEventListener("click", verschiebeAufgabe);
@@ -17,31 +22,32 @@
         function verschiebeAufgabe(event) {
             var li = event.target;
             if (li.parentNode.id == "to-do") {
-                document.getElementById("done").appendChild(li);
+                einsortieren(li, document.getElementById("done"));
             } else {
-                document.getElementById("to-do").appendChild(li)
+                einsortieren(li, document.getElementById("to-do"));
             }
         }
-        function sortiereListe(liste){
+        function einsortieren(item, liste) {
+            var text = item.textcontent;
+            var current = liste.firstChild;
+            while (current && (current.nodeType != Node.ELEMENT_NODE || current.textcontent < text)) {
+                current = current.nextSibling;
+            }
+            liste.insertBefore(item, current);
+        }
+        function sortiereListe(liste) {
             var items = [];
-            while (liste.firstChild){
+            while (liste.firstChild) {
                 var el = liste.removeChild(liste.firstChild);
-                if (el.nodeType == Node.ELEMENT_NODE){
+                if (el.nodeType == Node.ELEMENT_NODE) {
                     items.push(el);
                 }
             }
-            while (items.length){
+            while (items.length) {
                 einsortieren(items.shift(), liste);
             }
         }
-        function einsortieren(item, liste){
-            var text = item.textcontent;
-            var current = liste.firstChild;
-            while (current && (current.nodeType !=Node.ELEMENT_NODE || current.textcontent < text)){
-                current = current.nextSibling;
-            }
-            liste.insertBefore (item, current);
-        }
+        
 
     </script>
 
@@ -51,18 +57,18 @@
     <h1>Meisterprüfung</h1>
 
     <h2>Noch zu tun</h2>
-<ul id="to-do">
-    <li>Zauberbücher lesen</li>
-    <li>Tabellenzauber üben</li>
-    <li>Des Meisters Schuhe putzen</li>
-    <li>Wasser schleppen</li>
-    <li>Den Boden wischen</li>
-    <li>Kaffee kochen</li>
-</ul>
-<h2>Erledigt</h2>
-<ul id="done">
+    <ul id="to-do">
+        <li>Zauberbücher lesen</li>
+        <li>Tabellenzauber üben</li>
+        <li>Des Meisters Schuhe putzen</li>
+        <li>Wasser schleppen</li>
+        <li>Den Boden wischen</li>
+        <li>Kaffee kochen</li>
+    </ul>
+    <h2>Erledigt</h2>
+    <ul id="done">
 
-</ul>
+    </ul>
 
 
 
