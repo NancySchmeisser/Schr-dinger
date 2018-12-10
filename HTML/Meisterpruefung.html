@@ -14,7 +14,14 @@
                 lis(i).addEventListener("click", verschiebeAufgabe);
             }
         }
-        
+        function verschiebeAufgabe(event){
+            var li = event.target;
+            if (li.parentNode.id == "to-do"){
+                document.getElementById("done").appendChild(li);
+            } else {
+                document.getElementById("to-do").appendChild(li)
+            }
+        }
 
     </script>
 
