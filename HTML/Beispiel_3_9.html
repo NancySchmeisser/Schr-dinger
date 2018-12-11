@@ -4,26 +4,28 @@
 <head>
     <title>Hintergrund aus dem Schottlandurlaub</title>
     <style>
-label {
-    display: block;
-}
+        label {
+            display: block;
+        }
     </style>
     <script>
-    var schroedingersKatze = {};
-    schroedingersKatze.name = "Kleiner Stinker";
-    schroedingersKatze.besitzer = "Schrödinger";
-    schroedingersKatze.alter = 4;
-    schroedingersKatze.gewicht = 4,5;
-    schroedingersKatze.rasse = "Main Coon";
-    function fuelleFormular(){
-        var felder = document.getElementsByTagName("input");
-        for (var i = 0; i < felder.lenght; i++){
-            felder[i].value = schroedingersKatze[felder[i].name];
+        var schroedingersKatze = {
+            name: "Kleiner Stinker",
+            besitzer: "Schrödinger",
+            alter: 4,
+            gewicht: 4.5,
+            rasse: "Straßenmischung",
         }
-    }
-    window.addEventListener("load", fuelleFormular);
-    
-    
+        
+        function fuelleFormular() {
+            var felder = document.getElementsByTagName("input");
+            for (var i = 0; i < felder.lenght; i++) {
+                felder[i].value = schroedingersKatze[felder[i].name];
+            }
+        }
+        window.addEventListener("load", fuelleFormular);
+
+
     </script>
     <meta charset="utf-8" />
 </head>
@@ -42,9 +44,9 @@ label {
         JavaScript ist nicht aktiv!
     </noscript>
 
-   
 
-<br>
+
+    <br>
     <a href="index.html">Zu Seite Index</a>
     <a href="index.html#unten">Andere Seite unten</a>
     <a href="links_eins.html">Zu Seite 1</a>
