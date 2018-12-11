@@ -9,12 +9,18 @@
         }
     </style>
     <script>
+
+           window.addEventListener("load", fuelleFormular);
         var schroedingersKatze = {
             name: "Kleiner Stinker",
             besitzer: "Schrödinger",
             alter: 4,
             gewicht: 4.5,
             rasse: "Straßenmischung",
+            begruesse: function () {
+                /*Mit dem Schlüsselwort this wird auf das umgebende Objekt zugegriffen und der Name ausgelesen.*/
+                alert("Miau, ich bin " + this.name);
+            }
         }
         
         function fuelleFormular() {
@@ -23,7 +29,7 @@
                 felder[i].value = schroedingersKatze[felder[i].name];
             }
         }
-        window.addEventListener("load", fuelleFormular);
+     
 
 
     </script>
@@ -31,8 +37,9 @@
 </head>
 
 <body>
+        <h1>Hier kommt die Katz</h1>
 
-    <h1>Formulare und Objekte</h1>
+    <h2>Formulare und Objekte</h2>
     <form name="katze">
         <label for="name">Name: </label><input id="name" name="name" value="" /><br />
         <label for="besitzer">Besitzer: </label><input id="besitzer" name="besitzer" value="" /><br />
