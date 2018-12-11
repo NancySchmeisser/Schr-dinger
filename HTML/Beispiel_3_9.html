@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Hier kommt die Katz</title>
+    <title>Geburtstage</title>
     <style>
         label {
             display: block;
@@ -10,25 +10,19 @@
     </style>
     <script>
 
-        window.addEventListener("load", fuelleFormular);
-        var schroedingersKatze = {
-            name: "Kleiner Stinker",
-            besitzer: "Schrödinger",
-            alter: 4,
-            gewicht: 4.5,
-            rasse: "Straßenmischung",
-            begruesse: function () {
-                 alert("Miau, ich bin " + this.name);
+        window.addEventListener("load", hinzufuegen);
+        var liste = {};
+            function hinzufuegen(){
+                var name = document.getElementById("name");
+                var datum = document.getElementById("geburtstag");
+                liste[name.value] = datum.value;
+                date.value = "";
+                name.value = "";
             }
-        };
-        schroedingersKatze.begruesse();
+            
+        
 
-        function fuelleFormular() {
-            var felder = document.getElementsByTagName("input");
-            for (var i = 0; i < felder.lenght; i++) {
-                felder[i].value = schroedingersKatze[felder[i].name];
-            }
-        }
+       
 
 
 
@@ -37,15 +31,13 @@
 </head>
 
 <body>
-    <h1>Hier kommt die Katz</h1>
+    <h1>Geburtstagsliste</h1>
 
-    <h2>Formulare und Objekte</h2>
+    <h2>Neuer Geburtstag</h2>
     <form name="katze">
-        <label for="name">Name: </label><input id="name" name="name" value="" /><br />
-        <label for="besitzer">Besitzer: </label><input id="besitzer" name="besitzer" value="" /><br />
-        <label for="alter">Alter: </label><input id="alter" name="alter" value="" /><br />
-        <label for="gewicht">Gewicht: </label><input id="gewicht" name="gewicht" value="" /><br />
-        <label for="rasse">Rasse: </label><input id="rasse" name="rasse" value="" /><br />
+        <label for="Name">Name: </label><input id="name" name="name" value="" /><br />
+        <label for="Geburtstag">Geburtstag: </label><input id="geburtstag" name="geburtstag" value="" /><br />
+       
     </form>
     <noscript>
         JavaScript ist nicht aktiv!
