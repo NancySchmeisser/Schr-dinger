@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Geburtstage</title>
-    <style>
-        label {
-            display: block;
-        }
-    </style>
+    <meta charset="utf-8"/>
+    <title>Geburtstagsliste - Objekte als Maps</title>
     <script>
-
-        window.addEventListener("load", hinzufuegen);
+        /*In dieser globalen Variable werden die Geburstage gespeichert.
+        Das Objekt wird hier "nur" als assoziatives Array benutzt, also als Datenstruktur, die zu einem beliebigen
+        Schlüssel einen Wert speichert.*/
         var liste = {};
-            function hinzufuegen(){
-                var name = document.getElementById("name");
-                var datum = document.getElementById("geburtstag");
-                liste[name.value] = datum.value;
-                date.value = "";
-                name.value = "";
+
+        window.addEventListener("load", init);
+
+        function init() {
+            document.getElementById("add").addEventListener("click", hinzufuegen);
+        }
+
+        function hinzufuegen() {
+            /*Die eingegebenen Daten werden aus den Eingabefeldern ausgelesen*/
+            var name = document.getElementById("name");
+            var date = document.getElementById("geburtstag");
+            /*So einfach wird ein Wert in der globalen Variable gespeichert. In diesem Fall funktioniert nur die
+            Schreibweise mit [], um eine Eigenschatz zu setzen, weil der Name der Eigenschaft in einer Variable steht.*/
+            liste[name.value] = date.value;
+            /*Eingabefelder leeren*/
+            date.value = "";
+            name.value = "";
+            /*Nach dem Speichern wird die ganze Liste wieder ausgegeben.*/
+            ausgeben();
+        }
+
+        function ausgeben() {
+            /*Für die Ausgabe wird zunächst das Zielelement komplett geteert.*/
+            var ul = document.getElementById("ausgabe");
+            while (ul.firstChild)
+                ul.removeChild(ul.firstChild);
+            /*Mit einer for ... in Schleife wird über alle Eigenschaften des Objekts iteriert.*/
+            for (var name in liste) {
+                /*Jede einzelne wird an die Ausgabe angehangen*/
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(name + " - " + liste[name]));
+                ul.appendChild(li);
             }
-            
-        
-
-       
-
-
-
+        }
     </script>
-    <meta charset="utf-8" />
 </head>
 
 <body>
-    <h1>Geburtstagsliste</h1>
+<h1>Geburtstagsliste</h1>
 
-    <h2>Neuer Geburtstag</h2>
-    <form name="katze">
-        <label for="Name">Name: </label><input id="name" name="name" value="" /><br />
-        <label for="Geburtstag">Geburtstag: </label><input id="geburtstag" name="geburtstag" value="" /><br />
-       
-    </form>
-    <noscript>
-        JavaScript ist nicht aktiv!
-    </noscript>
-
-
-
-    <br>
-    <a href="index.html">Zu Seite Index</a>
-    <a href="index.html#unten">Andere Seite unten</a>
-    <a href="links_eins.html">Zu Seite 1</a>
+<h2>Neuer Geburtstag</h2>
+Name: <input type="text" name="name" id="name"> Geburtstag: <input type="text" name="geburtstag" id="geburtstag"><br>
+<button id="add">Hinzufügen</button>
+<h2>Die Liste</h2>
+<ul id="ausgabe"></ul>
+<noscript>
+    JavaScript ist nicht aktiv!
+</noscript>
 </body>
-
 </html>
