@@ -28,6 +28,12 @@ function pruefeCookieName(name){
     }
     return true;
 }
+function pruefeCookieWert(wert){
+    if (wert.indexof(",") > -1 || wert.indexOf(";") > -1 || wert.indexOf(" ") > -1)
+    alert("Ungültiger Wert");
+    return false;
+}
+return true;
 
 
 
