@@ -35,6 +35,15 @@ function pruefeCookieWert(wert){
 }
 return true;
 
+function setzeCookie(name, wert){
+    if (pruefeCookieName(name) && pruefeCookieWert(wert)) {
+        document.cookie = name + "=" + wert;
+    }
+}
+function zeigeCookies(){
+    leere Ausgabe();
+    var cookies = document.cookie.split(";");
+}
 
 
     </script>
