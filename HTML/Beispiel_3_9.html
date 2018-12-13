@@ -9,6 +9,26 @@
     </style>
     <script>
        
+function setzeCookieAusFormular(){
+
+var nameFeld = document.getElementById("name");
+var wertFeld = document.getElementById("wert");
+var name = nameFeld.value;
+var wert = wertFeld.value;
+setzeCookie(name, wert);
+nameFeld.value = "";
+wertFeld.value = "";
+zeigeCookies();
+}
+
+function pruefeCookieName(name){
+    if (name.indexof(",") > -1 || name.indexOf(";") > -1 || name.indexOf(" ") > -1 || name.indexof("=") > -1){
+        alert("Ungültiger Name");
+        return false;
+    }
+    return true;
+}
+
 
 
     </script>
