@@ -3,41 +3,12 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Geburtstage</title>
+    <title>Cookies</title>
     <style>
-        label {
-            display: block;
-        }
+       
     </style>
     <script>
-        var liste = {};
-
-        window.addEventListener("load", init);
-
-        function init() {
-            document.getElementById("add").addEventListener("click", hinzufuegen);
-        }
-
-        function hinzufuegen() {
-            var name = document.getElementById("name");
-            var date = document.getElementById("geburtstag");
-            liste[name.value] = date.value;
-            date.value = "";
-            name.value = "";
-            ausgeben();
-        }
-        function ausgeben() {
-            var ul = document.getElementById("ausgabe");
-            while (ul.firstChild)
-                ul.removeChild(ul.firstChild);
-            for (var name in liste) {
-                var li = document.createElement("li");
-                li.appendChild(document.createTextNode(name + "-" + liste[name]));
-                ul.appendChild(li);
-
-            }
-        }
-
+       
 
 
     </script>
@@ -45,16 +16,7 @@
 </head>
 
 <body>
-    <h1>Geburtstagsliste</h1>
-
-    <h2>Neuer Geburtstag</h2>
-    Name: <input type="text" name="name" id="name"> Geburtstag: <input type="text" name="geburtstag" id="geburtstag"><br>
-    <button id="add">Hinzufügen</button>
-    <h2>Die Liste</h2>
-    <ul id="ausgabe"></ul>
-    <noscript>
-        JavaScript ist nicht aktiv!
-    </noscript>
+   
 
 
 
