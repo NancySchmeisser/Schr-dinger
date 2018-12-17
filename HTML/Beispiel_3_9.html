@@ -44,7 +44,12 @@ function zeigeCookies(){
     leereAusgabe();
     var cookies = document.cookie.split(";");
 }
-
+var ausgabe = document.getElementById("ausgabe");
+for (var i = 0; i < cookies.length; i++){
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(cookies[i]));
+    ausgabe.appendChild(li);
+}
 
     </script>
    
