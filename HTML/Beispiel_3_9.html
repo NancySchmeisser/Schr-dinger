@@ -50,6 +50,11 @@ for (var i = 0; i < cookies.length; i++){
     li.appendChild(document.createTextNode(cookies[i]));
     ausgabe.appendChild(li);
 }
+function init(){
+    document.getElementById("speichern").addEventListener("click", setzeCookieAusFormular);
+    zeigeCookies();
+}
+window.addEventListener("load", init);
 
     </script>
    
