@@ -1,64 +1,41 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Kuchen backen - Fileauswahl mit Drag & Drop</title>
-    <style>
-        .bereit-zum-abwurf {
-            border: 2px dashed red;
-        }
-
-        div {
-            width: 400px;
-            height: 50px;
-            border: 1px solid black;
-            background-color: lightgray;
-            text-align: center;
-            font-variant: small-caps;
-            padding-top: 10px;
-        }
-    </style>
+    <title>Die Rezeptseite: Backe backe Kuchen</title>
     <script>
 
         window.addEventListener("load", init);
 
         function init() {
-            var einwurf = document.getElementById('dateieinwurf');
-            einwurf.addEventListener('dragover', ueberziehen);
-            einwurf.addEventListener('dragenter', dragenter);
-            einwurf.addEventListener('dragleave', dragleave);
-            einwurf.addEventListener('drop', waehleDatei);
+            document.getElementById("datei").addEventListener("change", waehleRezept);
+            document.getElementById("bild").addEventListener("change", waehleBild);
+            document.getElementById("fertig").addEventListener("click", abschliessen);
+            document.getElementById("dateiknopf").addEventListener("click", function () {
+                document.getElementById("datei").click();
+            });
+            document.getElementById("bildknopf").addEventListener("click", function () {
+                document.getElementById("bild").click();
+            });
         }
 
-        /*Der dragover-Handler muss, blödsinnig wie es auch ist, vorhanden sein und das empfangene Event stoppen,
-        nur dann klappts auch mit dem Droppen.*/
-        function ueberziehen(event) {
-            event.stopPropagation();
-            event.preventDefault();
-            event.dataTransfer.dropEffect = 'move';
-        }
-
-        /*Dem User anzuzeigen, dass er auf diesem Element eine Datei abwerfen kann, muss sein. Sonst kommt er da nie drauf.*/
-        function dragenter(event) {
-            event.target.classList.add("bereit-zum-abwurf");
-        }
-
-        function dragleave(event) {
-            event.target.classList.remove("bereit-zum-abwurf");
-        }
-
-        function waehleDatei(event) {
-            /*Das Drop-Event MUSS gestoppt werden, sonst wird das Default-Verhalten des Browsers ausgelöst und die Datei
-            in diesem Fenster geöffnet.*/
-            event.stopPropagation();
-            event.preventDefault();
-            if (event.dataTransfer.files[0]) {
+        /*Wird ein Rezept ausgewählt, dann wird es geladen, */
+        function waehleRezept(event) {
+            if (event.target.files[0]) {
                 var leser = new FileReader();
                 leser.addEventListener("load", rezeptGeladen);
                 leser.addEventListener("error", zeigeLadefehler);
-                /*readAsText liest eine Datei als Text ein. Überraschung.
-                Interessanter ist das Feld dataTransfer des Events, das enthält die gedroppten Daten.*/
-                leser.readAsText(event.dataTransfer.files[0], "UTF-8");
+                leser.readAsText(event.target.files[0], "UTF-8");
+            }
+        }
+
+        /*Desgleichen für Bilder */
+        function waehleBild(event) {
+            if (event.target.files[0]) {
+                var leser = new FileReader();
+                leser.addEventListener("load", bildGeladen);
+                leser.addEventListener("error", zeigeLadefehler);
+                leser.readAsDataURL(event.target.files[0]);
             }
         }
 
@@ -66,31 +43,76 @@
             alert("Konnte Datei nicht laden!");
         }
 
-        /*Ist die Datei vollständig geladen wird ihr Inhalt verarbeitet.*/
+        /*Ein geladenes Rezept wird dargestellt wie schon zuvor.*/
         function rezeptGeladen(event) {
-            var body = document.getElementsByTagName("body")[0];
-            /*Der Dateiinhalt wird in Zeilen getrennt. \n steht für einen Zeilenumbruch*/
+            var rezept = document.getElementById("rezept");
             var zeilen = event.target.result.split("\n");
-            /*Die erste Zeile enthält den Namen des Rezepts und wird zur Überschrift*/
             var title = document.createElement("h1");
             title.appendChild(document.createTextNode(zeilen[0]));
-            body.appendChild(title);
+            rezept.appendChild(title);
+            title = document.getElementsByTagName("title")[0];
+            while (title.firstChild) title.removeChild(title.firstChild);
+            title.appendChild(document.createTextNode(zeilen[0]));
             var ausgabe = document.createElement("ul");
-            body.appendChild(ausgabe);
-            /*Alle weiteren Zeilen enthalten jeweils eine Anweisung des Rezepts*/
+            rezept.appendChild(ausgabe);
             for (var i = 1; i < zeilen.length; i++) {
                 var li = document.createElement("li");
                 li.appendChild(document.createTextNode(zeilen[i]));
                 ausgabe.appendChild(li);
             }
         }
+
+        /*Das Bild zum Rezept gibt es nun auch noch.*/
+        function bildGeladen(event) {
+            var img = document.createElement("img");
+            img.setAttribute("alt", "Kuchen");
+            img.setAttribute("src", event.target.result);
+            document.getElementById("bilder").appendChild(img);
+        }
+
+        /*Und wenn alles fertig ist wird der Eingabebereich sowie alles JavaScript aus der Seite entfernt. Sofort fertig für ins Web zu stelleb.*/
+        function abschliessen() {
+            if (confirm("Wirklich abschliessen?")) {
+                var el = document.getElementById("eingabe");
+                el.parentElement.removeChild(el);
+                el = document.getElementsByTagName("script");
+                while (el.length) {
+                    el[0].parentElement.removeChild(el[0]);
+                }
+            }
+        }
     </script>
+    <style>
+        #rezept {
+            position: absolute;
+            left: 0;
+            right: 40%;
+            margin: 5px;
+        }
+
+        #bilder {
+            position: absolute;
+            left: 40%;
+            right: 100%;
+            margin: 5px;
+        }
+
+    </style>
 </head>
 <body>
-<h1>Rezepte zu Webseiten</h1>
+<div id="eingabe">
+    <h1>Rezepte zu Webseiten</h1>
 
-<h2>Textdatei auswählen</h2>
-
-<div id="dateieinwurf">Rezepte hier abwerfen</div>
+    <h2>Textdatei auswählen</h2>
+    <input name="datei" id="datei" type="file" accept="text/plain" style="display: none;"/>
+    <button id="dateiknopf">Wähle ein Rezept</button>
+    <h2>Bild auswählen</h2>
+    <input name="bild" id="bild" type="file" accept="image/*" style="display: none;"/>
+    <button id="bildknopf">Wähle ein Bild</button>
+    <h2>Und fertig</h2>
+    <button type="button" id="fertig">Alles Fertig</button>
+</div>
+<div id="rezept"></div>
+<div id="bilder"></div>
 </body>
 </html>
