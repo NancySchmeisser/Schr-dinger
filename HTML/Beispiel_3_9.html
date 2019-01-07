@@ -4,15 +4,52 @@
     <meta charset="utf-8"/>
     <title>Audio</title>
     <script>
-        function init(){
-            var knopfPlay = document.getElementById("play-knopf");
-            var knopfPause = document.getElementById("pause-knopf");
-            var radio = document.getElementById("mein-radio");
-            knopfPlay.addEventListener("click", function(){
-                radio.play();
-            });
-            knopfPause.addEventListener("click", function(){
 
+        function spule(player, sekunden) {
+            player.currentTime += sekunden;
+        }
+
+        function regleLautstärke(player, delta) {
+            player.volume += delta;
+        }
+
+        function init() {
+            /*Da alle Steuerfunktionen nur Einzeiler sind, hab ich sie hier anonym definiert*/
+            /*Spule 30 Sekunden zurück*/
+            document.getElementById("zurueck-knopf").addEventListener("click", function () {
+                spule(document.getElementById("mein-radio"), -30);
+            });
+            /*Abspielen*/
+            document.getElementById("play-knopf").addEventListener("click", function () {
+                document.getElementById("mein-radio").play();
+            });
+            /*Pausieren*/
+            document.getElementById("pause-knopf").addEventListener("click", function () {
+                document.getElementById("mein-radio").pause();
+            });
+            /*Spule 30 Sekunden vor*/
+            document.getElementById("vor-knopf").addEventListener("click", function () {
+                spule(document.getElementById("mein-radio"), 30);
+            });
+            /*10% leiser*/
+            document.getElementById("leiser-knopf").addEventListener("click", function () {
+                regleLautstärke(document.getElementById("mein-radio"), -0.1);
+            });
+            /*10% lauter*/
+            document.getElementById("lauter-knopf").addEventListener("click", function () {
+                regleLautstärke(document.getElementById("mein-radio"), 0.1);
+            });
+            /*Mit halber Geschwindigkeit abspielen*/
+            document.getElementById("halbschnell-knopf").addEventListener("click", function () {
+                document.getElementById("mein-radio").playbackRate = 0.5;
+            });
+            /*Mit normaler Geschwindigkeit abspielen*/
+            document.getElementById("normalschnell-knopf").addEventListener("click", function () {
+                document.getElementById("mein-radio").playbackRate = 1;
+            });
+            /*Mit doppelter Geschwindigkeit abspielen*/
+            document.getElementById("doppeltschnell-knopf").addEventListener("click", function () {
+                document.getElementById("mein-radio").playbackRate = 2;
             });
         }
         window.addEventListener("load", init)
